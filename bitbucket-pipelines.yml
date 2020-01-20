@@ -3,15 +3,16 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: microsoft/dotnet:2-sdk
+image: microsoft/dotnet:sdk
 
 pipelines:
-  default:  
-    - step:         
-         
-         caches:
-            - dotnetcore
-          script:
-            - dotnet restore
-            - dotnet build --no-restore
-            - dotnet test --no-build --no-restore
+  default:
+    - step:
+        script:
+          - echo "Everything is awesome!"
+           - export PROJECT_NAME=CoreDemoPipeline                     
+             
+                     - dotnet restore
+                     - dotnet build $PROJECT_NAME
+             
+           
