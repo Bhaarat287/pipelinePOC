@@ -10,4 +10,4 @@ pipelines:
     - step:
         script:
           - nuget restore
-          - MONO_IOMAP=case xbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" WebDemoPipeline\WebDemoPipeline.sln
+          - MONO_IOMAP=case msbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" WebDemoPipeline\WebDemoPipeline.sln
