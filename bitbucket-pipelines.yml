@@ -10,7 +10,9 @@ pipelines:
     - step:
         script:
           - echo "Everything is awesome!"
-           - export PROJECT_NAME=WebDemoPipeline           
-           - dotnet restore
-           - dotnet build $PROJECT_NAME
+           - export PROJECT_NAME=WebDemoPipeline                      
+             - export TEST_NAME=Test.WebDemoPipeline
+                     - dotnet restore
+                     - dotnet build $PROJECT_NAME
+                     - dotnet test $TEST_NAME
            
