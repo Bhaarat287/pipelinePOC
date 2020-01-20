@@ -8,6 +8,5 @@ image: mono
 pipelines:
   default:
     - step:
-        script:
-          - nuget restore
+        script:          
           - MONO_IOMAP=case msbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" WebDemoPipeline\WebDemoPipeline.sln
