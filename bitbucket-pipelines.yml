@@ -8,12 +8,14 @@ image: microsoft/dotnet:sdk
 pipelines:
   default:  
     - step:
-        caches:          
-          - dotnetcore  
-        script:
-          - echo "Everything is awesome!"
-           - export PROJECT_NAME=CoreDemoPipeline
-           - dotnet restore
-           - dotnet build $PROJECT_NAME
+         name: .NET Core build & test
+         image: microsoft/dotnet:2-sdk
+         caches:
+            - dotnetcore
+          script:
+            - dotnet restore
+            - dotnet build --no-restore
+            - dotnet test --no-build --no-restore
+                 
              
            
