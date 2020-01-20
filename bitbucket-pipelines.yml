@@ -3,10 +3,11 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: microsoft/aspnet:4.5
+image: mono
+
 pipelines:
   default:
     - step:
-        script: # Modify the commands below to build your repository.
-          - dotnet restore
-          - dotnet build WebDemoPipeline
+        script:
+          - nuget restore
+          - MONO_IOMAP=case xbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" WebDemoPipeline\WebDemoPipeline.sln
