@@ -6,8 +6,10 @@
 image: microsoft/dotnet:sdk
 
 pipelines:
-  default:
+  default:  
     - step:
+        caches:          
+          - dotnetcore  
         script:
           - echo "Everything is awesome!"
            - export PROJECT_NAME=CoreDemoPipeline
