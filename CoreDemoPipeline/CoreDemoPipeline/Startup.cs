@@ -18,6 +18,9 @@ namespace CoreDemoPipeline
         {
             Configuration = configuration;
             
+
+			
+		
             
         }
 
