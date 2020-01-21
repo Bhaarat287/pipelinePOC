@@ -18,10 +18,6 @@ namespace CoreDemoPipeline
         {
             Configuration = configuration;
             
-
-			
-		
-            
         }
 
         public IConfiguration Configuration { get; }
